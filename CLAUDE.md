@@ -42,6 +42,19 @@ npm run translate -- --target es      # Spanish
 npm run translate -- --target hi      # Hindi
 ```
 
+## /fire — one-word resume command
+
+Open a Claude Code session in this folder and type `/fire`.
+
+It will:
+1. Re-read `CLAUDE.md` + `ROADMAP.md`
+2. Verify `.env.cli`, deps, git state
+3. Run a smoke-test translation to confirm the token still works
+4. Tell you the next phase from the roadmap
+5. Wait for your go-ahead, then break the phase into tasks and execute
+
+Definition lives at `.claude/commands/fire.md`. Edit it to change behavior.
+
 Per-resource caps are set conservatively in
 `app/lib/shopify-translate.server.ts` (PRODUCT:10, METAFIELD:20, …) to keep
 the first run fast and safe. Bump these for a real run.
